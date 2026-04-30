@@ -16,8 +16,6 @@ app.use(cors({
   credentials: true
 }));
 
-app.options('*', cors()); 
-
 app.use(express.json());
 
 // --- ROOT ROUTE (IMPORTANT FOR TESTING) ---
