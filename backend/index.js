@@ -5,9 +5,12 @@ require('dotenv').config();
 
 const app = express();
 
-// Middleware
+
 app.use(cors({
-  origin: "*" // later replace with your frontend URL
+  origin: [
+    "http://localhost:5173", 
+    "https://team-task-manager-dhruvsharma.vercel.app/" 
+  ]
 }));
 app.use(express.json());
 
