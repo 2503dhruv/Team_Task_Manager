@@ -10,7 +10,9 @@ app.use(cors({
   origin: [
     "http://localhost:5173", 
     "https://team-task-manager-dhruvsharma.vercel.app/" 
-  ]
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
 app.use(express.json());
 
