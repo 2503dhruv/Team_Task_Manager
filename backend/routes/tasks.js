@@ -36,4 +36,14 @@ router.put('/:id', auth, async (req, res) => {
   }
 });
 
+// Delete a task (Admin only)
+router.delete('/:id', auth, isAdmin, async (req, res) => {
+  try {
+    await Task.findByIdAndDelete(req.params.id);
+    res.json({ message: 'Task deleted' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = router;
